@@ -1,23 +1,29 @@
 import React from "react";
-import rtx from "./img1.jpg";
-import gtx from "./img2.jpg";
-import BO3 from "./bo3.mp4";
-import "./style.css";
-function App() {
-  return (
-    <>
-      <div style={{ border: "solid 1px black", maxWidth: "100vw" }}>
-        <h1 className="title red">Your name here</h1>
-        <br />
-        <img src={rtx} alt="IMG 1" />
-        <br />
-        <img src={gtx} alt="IMG 2" />
-      </div>
-      <video style={{ width: "320px", height: "240px" }} controls>
-        <source src={BO3} type="video/mp4" />
-      </video>
-    </>
-  );
+import "./profile/profile";
+import Profile from "./profile/profile";
+import Prf from "./img.png";
+import "./profile/img";
+
+const handleName = (name) =>{
+  return (alert(name));
 }
 
+const myStyle = {padding : "0",margin : "0",color : "white", textAlign : "center", backgroundColor : "#232323" , maxWidth:"500px", display : "flex" , justifyContent : "center",alignItems :"center",flexDirection : "column"}
+
+const App = () => {
+  return (
+    <div style={{width : "100%" , display : "flex" , justifyContent : "center", backgroundColor :"#564476"}}>
+      <div style={myStyle}>
+    
+      <Profile
+        fullName="Hamouda"
+        bio="hello world"
+        profession="software engeer full stack javaScript python java c# php unity"
+        handleName={handleName}
+      >{Prf}</Profile>
+      
+      </div>
+    </div>
+  );
+};
 export default App;
